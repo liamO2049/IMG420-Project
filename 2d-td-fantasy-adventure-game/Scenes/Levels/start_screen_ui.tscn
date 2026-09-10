@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://f33rwyyycmmi"]
+
+[ext_resource type="Texture2D" uid="uid://cl6kd1s2jo7m4" path="res://Assets/Art/gradientBlue.png" id="1_51vq1"]
+[ext_resource type="Texture2D" uid="uid://dgtd46hyu6hn6" path="res://Assets/Art/BACKGROUND IMAGES/BG_03.png" id="2_bfh76"]
+[ext_resource type="Texture2D" uid="uid://cwm0pofusrpn7" path="res://Assets/Art/GAME TITLE LOGO/Game Title Logo_transp.png" id="3_kpjum"]
+[ext_resource type="Texture2D" uid="uid://b28krl7ysbnix" path="res://Assets/Art/BANNERS & SCROLLS/Scroll_04.png" id="4_veddi"]
+[ext_resource type="Texture2D" uid="uid://bbt48k5r4fkjr" path="res://Assets/Art/Liam_O_Donnell_text.png" id="5_vtmse"]
+
+[sub_resource type="Animation" id="Animation_2bidv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(369, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(325, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_82st5"]
+resource_name = "new_animation"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(369, -0.25, 0, 0.25, 0, 854, -0.16666667, -80.833336, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(325, -0.25, 0, 0.25, 0, -54, -0.16666667, 63.166668, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dbxqk"]
+_data = {
+&"RESET": SubResource("Animation_2bidv"),
+&"new_animation": SubResource("Animation_82st5")
+}
+
+[sub_resource type="Animation" id="Animation_fx2nk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(985, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8.875015, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2823203, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.019010399, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_1gioa"]
+resource_name = "Scroll_animation"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(985, -0.25, 0, 0.25, 0, 985, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(8.875015, -0.25, 0, 0.25, 0, 150.37503, -0.16666667, -23.583336, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.2823203, -0.25, 0, 0.25, 0, 0.2823203, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.019010399, -0.25, 0, 0.25, 0, 0.31380206, -0.16666667, -0.049131945, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4183"]
+_data = {
+&"RESET": SubResource("Animation_fx2nk"),
+&"Scroll_animation": SubResource("Animation_1gioa")
+}
+
+[node name="Start_Screen_UI" type="Control" unique_id=1634350719]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" type="Node" parent="." unique_id=34935524]
+
+[node name="GradientBlue" type="Sprite2D" parent="." unique_id=1215992518]
+position = Vector2(369, 325)
+texture = ExtResource("1_51vq1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GradientBlue" unique_id=158551139]
+libraries/ = SubResource("AnimationLibrary_dbxqk")
+
+[node name="TitleBackground" type="Sprite2D" parent="." unique_id=1658623496]
+position = Vector2(539, 309)
+texture = ExtResource("2_bfh76")
+
+[node name="GameTitleLogoTransp" type="Sprite2D" parent="." unique_id=979895016]
+position = Vector2(444.00006, 95.00002)
+scale = Vector2(0.36086956, 0.36086956)
+texture = ExtResource("3_kpjum")
+
+[node name="NameScroll" type="Sprite2D" parent="." unique_id=1198297492]
+position = Vector2(985, 8.875015)
+scale = Vector2(0.2823203, 0.019010399)
+texture = ExtResource("4_veddi")
+
+[node name="LiamODonnellText" type="Sprite2D" parent="NameScroll" unique_id=410398712]
+position = Vector2(12, 81)
+texture = ExtResource("5_vtmse")
+
+[node name="NameAnimation" type="AnimationPlayer" parent="NameScroll" unique_id=914534969]
+libraries/ = SubResource("AnimationLibrary_k4183")
