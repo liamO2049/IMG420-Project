@@ -63,7 +63,6 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_fx2nk"]
-length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,9 +70,9 @@ tracks/0/path = NodePath(".:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(985, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(985, -0.25, 0, 0.25, 0, 985, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -82,9 +81,9 @@ tracks/1/path = NodePath(".:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(8.875015, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(8.875015, -0.25, 0, 0.25, 0, 138.87503, -0.16666667, -21.66667, 0, 0),
+"times": PackedFloat32Array(0, 1)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -93,9 +92,9 @@ tracks/2/path = NodePath(".:scale:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.2823203, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.2823203, -0.25, 0, 0.25, 0, 0.2823203, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -104,9 +103,9 @@ tracks/3/path = NodePath(".:scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.019010399, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.019010399, -0.25, 0, 0.25, 0, 0.28984377, -0.16666667, -0.045138896, 0, 0),
+"times": PackedFloat32Array(0, 1)
 }
 
 [sub_resource type="Animation" id="Animation_1gioa"]
@@ -162,6 +161,54 @@ _data = {
 &"Scroll_animation": SubResource("Animation_1gioa")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ay35"]
+texture = ExtResource("1_51vq1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51vq1"]
+texture = ExtResource("1_51vq1")
+modulate_color = Color(0.63366693, 0.48437005, 0.68293387, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6dhoe"]
+texture = ExtResource("1_51vq1")
+modulate_color = Color(0.98039216, 0, 0.7019608, 1)
+
+[sub_resource type="Animation" id="Animation_51vq1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../TitleLogo:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_bfh76"]
+resource_name = "TitleAnimation"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../TitleLogo:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.41, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.5434781, 0.54347813), Vector2(0.23043475, 0.23043475), Vector2(0.3521738, 0.35217384)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpjum"]
+_data = {
+&"RESET": SubResource("Animation_51vq1"),
+&"TitleAnimation": SubResource("Animation_bfh76")
+}
+
 [node name="Start_Screen_UI" type="Control" unique_id=1634350719]
 layout_mode = 3
 anchors_preset = 15
@@ -180,12 +227,13 @@ texture = ExtResource("1_51vq1")
 libraries/ = SubResource("AnimationLibrary_dbxqk")
 
 [node name="TitleBackground" type="Sprite2D" parent="." unique_id=1658623496]
-position = Vector2(539, 309)
+position = Vector2(522, 289)
+scale = Vector2(0.8723958, 0.8723958)
 texture = ExtResource("2_bfh76")
 
-[node name="GameTitleLogoTransp" type="Sprite2D" parent="." unique_id=979895016]
+[node name="TitleLogo" type="Sprite2D" parent="." unique_id=979895016]
 position = Vector2(444.00006, 95.00002)
-scale = Vector2(0.36086956, 0.36086956)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("3_kpjum")
 
 [node name="NameScroll" type="Sprite2D" parent="." unique_id=1198297492]
@@ -199,3 +247,34 @@ texture = ExtResource("5_vtmse")
 
 [node name="NameAnimation" type="AnimationPlayer" parent="NameScroll" unique_id=914534969]
 libraries/ = SubResource("AnimationLibrary_k4183")
+
+[node name="StartButton" type="Button" parent="." unique_id=826242607]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.786
+anchor_bottom = 2.0970001
+offset_left = 1183.472
+offset_top = 201.0
+offset_right = 601.0
+offset_bottom = -1127.8561
+theme_override_styles/normal = SubResource("StyleBoxTexture_3ay35")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_51vq1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6dhoe")
+
+[node name="QuitButton" type="Button" parent="." unique_id=1189698631]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.786
+anchor_bottom = 2.0970001
+offset_left = 1185.472
+offset_top = 247.0
+offset_right = 602.0
+offset_bottom = -1082.8561
+
+[node name="QuitConfirmDialog" type="ConfirmationDialog" parent="." unique_id=1084546778]
+dialog_text = "Are you sure you want to quit?"
+
+[node name="TitleAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1190922588]
+root_node = NodePath("../NameScroll/NameAnimation")
+libraries/ = SubResource("AnimationLibrary_kpjum")
+autoplay = &"TitleAnimation"
