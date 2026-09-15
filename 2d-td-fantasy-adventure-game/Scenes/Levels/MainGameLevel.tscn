@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cs6v5scear6ml"]
+
+[ext_resource type="Texture2D" uid="uid://crsoif47yiywr" path="res://Assets/Art/BACKGROUND IMAGES/BG_07.png" id="1_1fsdw"]
+
+[node name="MainGameLevel" type="Node2D" unique_id=392458720]
+
+[node name="LevelBackground" type="Sprite2D" parent="." unique_id=1763666183]
+position = Vector2(585.5, 328)
+scale = Vector2(0.79464287, 0.8014706)
+texture = ExtResource("1_1fsdw")

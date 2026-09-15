@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://f33rwyyycmmi"]
 
 [ext_resource type="Texture2D" uid="uid://cl6kd1s2jo7m4" path="res://Assets/Art/gradientBlue.png" id="1_51vq1"]
+[ext_resource type="Script" uid="uid://fjoinkf6e26o" path="res://Scenes/Levels/start_screen_ui.gd" id="1_bfh76"]
 [ext_resource type="Texture2D" uid="uid://dgtd46hyu6hn6" path="res://Assets/Art/BACKGROUND IMAGES/BG_03.png" id="2_bfh76"]
 [ext_resource type="Texture2D" uid="uid://cwm0pofusrpn7" path="res://Assets/Art/GAME TITLE LOGO/Game Title Logo_transp.png" id="3_kpjum"]
 [ext_resource type="Texture2D" uid="uid://b28krl7ysbnix" path="res://Assets/Art/BANNERS & SCROLLS/Scroll_04.png" id="4_veddi"]
@@ -216,6 +217,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bfh76")
 
 [node name="Node" type="Node" parent="." unique_id=34935524]
 
@@ -248,6 +250,19 @@ texture = ExtResource("5_vtmse")
 [node name="NameAnimation" type="AnimationPlayer" parent="NameScroll" unique_id=914534969]
 libraries/ = SubResource("AnimationLibrary_k4183")
 
+[node name="QuitButton" type="Button" parent="." unique_id=1526278116]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.786
+anchor_bottom = 2.0970001
+offset_left = 1173.472
+offset_top = 273.0
+offset_right = 591.0001
+offset_bottom = -1055.8561
+theme_override_styles/normal = SubResource("StyleBoxTexture_3ay35")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_51vq1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6dhoe")
+
 [node name="StartButton" type="Button" parent="." unique_id=826242607]
 layout_mode = 1
 anchors_preset = -1
@@ -261,16 +276,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3ay35")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_51vq1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6dhoe")
 
-[node name="QuitButton" type="Button" parent="." unique_id=1189698631]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.786
-anchor_bottom = 2.0970001
-offset_left = 1185.472
-offset_top = 247.0
-offset_right = 602.0
-offset_bottom = -1082.8561
-
 [node name="QuitConfirmDialog" type="ConfirmationDialog" parent="." unique_id=1084546778]
 dialog_text = "Are you sure you want to quit?"
 
@@ -278,3 +283,7 @@ dialog_text = "Are you sure you want to quit?"
 root_node = NodePath("../NameScroll/NameAnimation")
 libraries/ = SubResource("AnimationLibrary_kpjum")
 autoplay = &"TitleAnimation"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="confirmed" from="QuitConfirmDialog" to="." method="_on_quit_confirm_dialog_confirmed"]
