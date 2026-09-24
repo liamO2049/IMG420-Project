@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cwm0pofusrpn7" path="res://Assets/Art/GAME TITLE LOGO/Game Title Logo_transp.png" id="3_kpjum"]
 [ext_resource type="Texture2D" uid="uid://b28krl7ysbnix" path="res://Assets/Art/BANNERS & SCROLLS/Scroll_04.png" id="4_veddi"]
 [ext_resource type="Texture2D" uid="uid://bbt48k5r4fkjr" path="res://Assets/Art/Liam_O_Donnell_text.png" id="5_vtmse"]
+[ext_resource type="Texture2D" uid="uid://n1bhmlmooeed" path="res://Assets/Art/Background red highlighted_button.png" id="7_veddi"]
+[ext_resource type="Texture2D" uid="uid://mcqo4onrhyk3" path="res://Assets/Art/Button Rect_green_Start_button.png" id="8_vtmse"]
 
 [sub_resource type="Animation" id="Animation_2bidv"]
 length = 0.001
@@ -162,19 +164,30 @@ _data = {
 &"Scroll_animation": SubResource("Animation_1gioa")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iog22"]
+texture = ExtResource("7_veddi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2bidv"]
+texture = ExtResource("7_veddi")
+modulate_color = Color(0.44705883, 0.2509804, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82st5"]
+texture = ExtResource("7_veddi")
+modulate_color = Color(0.5685132, 0, 0.12998217, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ay35"]
-texture = ExtResource("1_51vq1")
+texture = ExtResource("8_vtmse")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51vq1"]
-texture = ExtResource("1_51vq1")
+texture = ExtResource("8_vtmse")
 modulate_color = Color(0.63366693, 0.48437005, 0.68293387, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6dhoe"]
-texture = ExtResource("1_51vq1")
+texture = ExtResource("8_vtmse")
 modulate_color = Color(0.98039216, 0, 0.7019608, 1)
 
 [sub_resource type="Animation" id="Animation_51vq1"]
-length = 0.001
+length = 0.46666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -249,29 +262,30 @@ texture = ExtResource("5_vtmse")
 
 [node name="NameAnimation" type="AnimationPlayer" parent="NameScroll" unique_id=914534969]
 libraries/ = SubResource("AnimationLibrary_k4183")
+autoplay = &"RESET"
 
 [node name="QuitButton" type="Button" parent="." unique_id=1526278116]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.786
 anchor_bottom = 2.0970001
-offset_left = 1173.472
+offset_left = 1222.472
 offset_top = 273.0
-offset_right = 591.0001
+offset_right = 530.0
 offset_bottom = -1055.8561
-theme_override_styles/normal = SubResource("StyleBoxTexture_3ay35")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_51vq1")
-theme_override_styles/hover = SubResource("StyleBoxTexture_6dhoe")
+theme_override_styles/normal = SubResource("StyleBoxTexture_iog22")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2bidv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_82st5")
 
 [node name="StartButton" type="Button" parent="." unique_id=826242607]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.786
 anchor_bottom = 2.0970001
-offset_left = 1183.472
-offset_top = 201.0
-offset_right = 601.0
-offset_bottom = -1127.8561
+offset_left = 1223.472
+offset_top = 208.0
+offset_right = 531.0
+offset_bottom = -1120.8561
 theme_override_styles/normal = SubResource("StyleBoxTexture_3ay35")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_51vq1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6dhoe")
