@@ -75,6 +75,10 @@ func play_action_animation(action_name):
 func _unhandled_input(event):
 	if event.is_action_pressed("attack"):
 		play_action_animation("attack")
+	if event.is_action_pressed("test_hit"):
+		play_action_animation("test_hit")
+	if event.is_action_pressed("test_die"):
+		play_action_animation("test_die")
 func _on_animated_sprite_2d_animation_finished() -> void:
 	is_action_playing = false
 	#else:
