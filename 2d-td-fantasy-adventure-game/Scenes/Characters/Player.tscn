@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bq15akyvkm7r2" path="res://Scenes/Levels/player.gd" id="1_0el0d"]
 [ext_resource type="Texture2D" uid="uid://d06vpm08jqsi2" path="res://Assets/Art/Fantasy Adventurer_female_Ranger_SpriteSheet.png" id="2_0el0d"]
+[ext_resource type="Script" path="res://Scenes/Characters/damage_area.gd" id="3_o5en2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxpl6"]
 atlas = ExtResource("2_0el0d")
@@ -1658,11 +1659,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7qdam"]
-radius = 6.0
-height = 28.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ay35"]
 
-[node name="PlayerNode" type="CharacterBody2D" unique_id=1456255243]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2ofd"]
+size = Vector2(8.639782, 14.862457)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6dhoe"]
+radius = 9.215767
+
+[node name="PlayerNode" type="CharacterBody2D" unique_id=1456255243 groups=["player"]]
 position = Vector2(47, 168)
 scale = Vector2(3.47231, 3.364181)
 motion_mode = 1
@@ -1674,9 +1679,23 @@ scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_3ay35")
 animation = &"test_hit_up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=191010344]
-position = Vector2(0, 0.1000061)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CapsuleShape2D_7qdam")
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=757534141 groups=["player"]]
+position = Vector2(-0.00015258789, -0.00016784668)
+scale = Vector2(2.5, 2.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=688854091]
+shape = SubResource("CapsuleShape2D_3ay35")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2087044399]
+shape = SubResource("RectangleShape2D_q2ofd")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=2074288147 node_paths=PackedStringArray("player", "detection_area")]
+script = ExtResource("3_o5en2")
+player = NodePath("..")
+detection_area = NodePath(".")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1931648906]
+shape = SubResource("CircleShape2D_6dhoe")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
