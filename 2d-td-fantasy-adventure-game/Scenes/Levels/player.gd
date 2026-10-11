@@ -1,7 +1,12 @@
 extends CharacterBody2D
 signal hit
+signal healthChanged(new_health: int, max_health: int)
 var last_direction = "down"
 var is_action_playing = false
+
+var health: int = 100
+
+@export var max_health = 100
 
 @export var speed = 100 # How fast the player will move (pixels/sec).
 @onready var animated_sprite = $AnimatedSprite2D
@@ -9,11 +14,14 @@ var screen_size # Size of the game window.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	healthChanged.emit(health, max_health)
 	screen_size = get_viewport_rect().size
 	#hide()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	healthChanged.emit(health, max_health)
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):

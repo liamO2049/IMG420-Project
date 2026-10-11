@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o2d8pmgc4g5s"]
 
-[ext_resource type="Script" path="res://blob_ai.gd" id="1_4hu1s"]
+[ext_resource type="Script" uid="uid://kfjdvtg8o80e" path="res://blob_npc.gd" id="1_4hu1s"]
 [ext_resource type="Texture2D" uid="uid://6j88jjncy0xs" path="res://Assets/Art/Slime_Blue.png" id="1_odvqx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odvqx"]
