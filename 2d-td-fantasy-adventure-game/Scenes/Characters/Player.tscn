@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bq15akyvkm7r2" path="res://Scenes/Levels/player.gd" id="1_0el0d"]
 [ext_resource type="Texture2D" uid="uid://d06vpm08jqsi2" path="res://Assets/Art/Fantasy Adventurer_female_Ranger_SpriteSheet.png" id="2_0el0d"]
-[ext_resource type="Script" uid="uid://by855w5r824mg" path="res://Scenes/Characters/damage_area.gd" id="3_o5en2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxpl6"]
 atlas = ExtResource("2_0el0d")
@@ -1689,10 +1688,7 @@ shape = SubResource("CapsuleShape2D_3ay35")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2087044399]
 shape = SubResource("RectangleShape2D_q2ofd")
 
-[node name="DamageArea" type="Area2D" parent="." unique_id=2074288147 node_paths=PackedStringArray("player", "detection_area")]
-script = ExtResource("3_o5en2")
-player = NodePath("..")
-detection_area = NodePath(".")
+[node name="DamageArea" type="Area2D" parent="." unique_id=2074288147]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1931648906]
 shape = SubResource("CircleShape2D_6dhoe")

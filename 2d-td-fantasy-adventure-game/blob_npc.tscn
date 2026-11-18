@@ -188,8 +188,12 @@ radius = 120.83046
 [sub_resource type="CircleShape2D" id="CircleShape2D_udj5k"]
 radius = 17.029387
 
-[node name="BlobNPC" type="CharacterBody2D" unique_id=763395616 node_paths=PackedStringArray("timerFindWaypoint") groups=["blob"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4hu1s"]
+radius = 27.166155
+
+[node name="BlobNPC" type="CharacterBody2D" unique_id=763395616 node_paths=PackedStringArray("timerHitDamage", "timerFindWaypoint") groups=["blob"]]
 script = ExtResource("1_4hu1s")
+timerHitDamage = NodePath("TimerHitDamage")
 timerFindWaypoint = NodePath("TimerFindWayPoint")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=38772219]
@@ -209,3 +213,10 @@ shape = SubResource("CircleShape2D_udj5k")
 [node name="TimerFindWayPoint" type="Timer" parent="." unique_id=2063178771]
 wait_time = 5.0
 one_shot = true
+
+[node name="TimerHitDamage" type="Timer" parent="." unique_id=326939700]
+
+[node name="DmgArea" type="Area2D" parent="." unique_id=419028056]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DmgArea" unique_id=1760740045]
+shape = SubResource("CircleShape2D_4hu1s")

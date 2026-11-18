@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cfjbwfoft7m5y"]
+
+[ext_resource type="Texture2D" uid="uid://cl6kd1s2jo7m4" path="res://Assets/Art/gradientBlue.png" id="2_v2x3i"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ay35"]
+light_mode = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wjum6"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/Screenshot 2026-11-18 104957.png-2e3ebd188319dccd56d0ff18610cc3df.ctex"
+
+[node name="FireEffect" type="Node2D" unique_id=1089083599]
+scale = Vector2(0.52000034, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1647733534]
+material = SubResource("CanvasItemMaterial_3ay35")
+rotation = -0.77318084
+scale = Vector2(2.294, 0.5)
+amount = 5
+texture = SubResource("CompressedTexture2D_wjum6")
+gravity = Vector2(0, 0)
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+color = Color(1, 0.63529414, 0, 1)
+hue_variation_max = 0.16
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2081779752]
+energy = 0.2
+range_z_min = -50
+range_z_max = 100
+shadow_enabled = true
+texture = ExtResource("2_v2x3i")
+texture_scale = 2.0
